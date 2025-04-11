@@ -5,8 +5,49 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Todo"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
+        Title="TodoList" Height="370" Width="400">
 
-    </Grid>
+    <StackPanel 
+        VerticalAlignment="Top" 
+        HorizontalAlignment="Center" 
+        Width="300"
+        Margin="20">
+        
+        <StackPanel VerticalAlignment="Top" 
+            HorizontalAlignment="Center" 
+            Width="300"
+            Margin="20">
+        </StackPanel>
+        
+        <TextBlock Text="Min Todo-lista" 
+           FontSize="24" 
+           HorizontalAlignment="Center"
+           Margin="0,0,0,20"/>
+        
+        <ListBox x:Name="todoListBox"
+         MinHeight="100"
+         Margin="0,0,0,10"/>
+        
+        <TextBox x:Name="inputTextBox"
+         Margin="0,0,0,10"
+         Padding="5"
+         FontSize="14"/>
+
+        <StackPanel Orientation="Horizontal">
+
+            <Button x:Name="addButton" 
+            Content="Lägg till" 
+            Width="120" 
+            Height="30"
+            Margin="0,0,0,0" Click="addButton_Click_1"/>
+
+            <Button x:Name="removeButton" 
+            Content="Ta bort vald" 
+            Width="120" 
+            Height="30"
+            Margin="60,0,0,0" Click="removeButton_Click"/>
+
+        </StackPanel>
+    </StackPanel>
 </Window>
+
