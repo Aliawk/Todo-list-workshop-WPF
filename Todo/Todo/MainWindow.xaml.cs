@@ -10,11 +10,12 @@ namespace Todo
     public partial class MainWindow : Window
     {
         private List<string> todoList = new List<string>();
-
+        private int count;
         public MainWindow()
         {
             InitializeComponent();
             todoListBox.ItemsSource = todoList;
+            countTodo.Text = "" + count;
         }
 
         private void addButton_Click_1(object sender, RoutedEventArgs e)
@@ -31,8 +32,10 @@ namespace Todo
                 return;
             }
             todoList.Add(inputTextBox.Text);
-            todoListBox.Items.Refresh();
             inputTextBox.Clear();
+            count++;
+            countTodo.Text = "" + count;
+            todoListBox.Items.Refresh();
         }
 
         private void removeButton_Click(object sender, RoutedEventArgs e)
@@ -57,6 +60,8 @@ namespace Todo
                 if (resultat == MessageBoxResult.OK)
                 {
                     todoList.Remove(todoListBox.SelectedItem.ToString());
+                    count--;
+                    countTodo.Text = "" + count;
                     todoListBox.Items.Refresh();
                 }
                 else

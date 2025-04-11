@@ -5,13 +5,13 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Todo"
         mc:Ignorable="d"
-        Title="TodoList" Height="370" Width="400">
+        Title="TodoList" Height="400" Width="400">
 
     <StackPanel 
         VerticalAlignment="Top" 
         HorizontalAlignment="Center" 
         Width="300"
-        Margin="20">
+        Margin="30">
         
         <StackPanel VerticalAlignment="Top" 
             HorizontalAlignment="Center" 
@@ -46,8 +46,16 @@
             Width="120" 
             Height="30"
             Margin="60,0,0,0" Click="removeButton_Click"/>
+            
+        
+            
+            
 
         </StackPanel>
+        <TextBox x:Name="countTodo"
+             Margin="0,0,0,10"
+             Padding="5"
+             FontSize="14"/>
     </StackPanel>
 </Window>
 
