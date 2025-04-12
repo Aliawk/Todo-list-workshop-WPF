@@ -1,0 +1,13 @@
+﻿<Window 
+    x:Class="Todo.EditWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="Redigera uppgift" Height="150" Width="300">
+    
+    <StackPanel Margin="20">
+        
+        <TextBox x:Name="editTextBox" Margin="0,0,0,30" FontSize="14"/>
+        <Button Content="Spara" Width="80" HorizontalAlignment="Center" Click="SaveButton_Click"/>
+        
+    </StackPanel>
+</Window>

@@ -5,14 +5,15 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Todo"
         mc:Ignorable="d"
-        Title="TodoList" Height="400" Width="400">
+        Title="TodoList" Height="420" Width="400">
+
 
     <StackPanel 
         VerticalAlignment="Top" 
         HorizontalAlignment="Center" 
         Width="300"
         Margin="30">
-        
+
         <StackPanel VerticalAlignment="Top" 
             HorizontalAlignment="Center" 
             Width="300"
@@ -26,7 +27,8 @@
 
         <ListBox x:Name="todoListBox"
              MinHeight="100"
-             Margin="0,0,0,10"/>
+             Margin="0,0,0,10"
+             MouseDoubleClick="todoListBox_MouseDoubleClick"/>
 
         <TextBox x:Name="inputTextBox"
              Margin="0,0,0,10"
