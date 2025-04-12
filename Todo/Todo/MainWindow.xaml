@@ -19,7 +19,7 @@
             Margin="20">
         </StackPanel>
         
-        <TextBlock Text="Min Todo-lista" 
+        <TextBlock Text="Min to-do list" 
            FontSize="24" 
            HorizontalAlignment="Center"
            Margin="0,0,0,20"/>
@@ -31,7 +31,7 @@
         <TextBox x:Name="inputTextBox"
              Margin="0,0,0,10"
              Padding="5"
-             FontSize="14"/>
+             FontSize="14" TextChanged="inputTextBox_TextChanged"/>
 
         <StackPanel Orientation="Horizontal">
 

@@ -15,7 +15,7 @@ namespace Todo
         {
             InitializeComponent();
             todoListBox.ItemsSource = todoList;
-            countTodo.Text = "" + count;
+            countTodo.Text = "Antal uppgifter: " + count;
         }
 
         private void addButton_Click_1(object sender, RoutedEventArgs e)
@@ -34,7 +34,7 @@ namespace Todo
             todoList.Add(inputTextBox.Text);
             inputTextBox.Clear();
             count++;
-            countTodo.Text = "" + count;
+            countTodo.Text = "Antal uppgifter: " + count;
             todoListBox.Items.Refresh();
         }
 
@@ -53,7 +53,7 @@ namespace Todo
             if (todoListBox.SelectedItem != null)
             {
                 MessageBoxResult resultat = MessageBox.Show(
-                    "Är du säker på att du vill ta bort detta", "Varning",
+                    "Är du säker på att du vill ta bort detta?", "Varning",
                     MessageBoxButton.OKCancel,
                     MessageBoxImage.Warning);
 
@@ -61,7 +61,7 @@ namespace Todo
                 {
                     todoList.Remove(todoListBox.SelectedItem.ToString());
                     count--;
-                    countTodo.Text = "" + count;
+                    countTodo.Text = "Antal uppgifter: " + count;
                     todoListBox.Items.Refresh();
                 }
                 else
@@ -69,6 +69,11 @@ namespace Todo
                     return;
                 }
             }
+        }
+
+        private void inputTextBox_TextChanged(object sender, System.Windows.Controls.TextChangedEventArgs e)
+        {
+
         }
     }
 }
