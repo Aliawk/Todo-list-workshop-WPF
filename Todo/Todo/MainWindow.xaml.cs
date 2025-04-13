@@ -1,4 +1,5 @@
 ﻿using System.Windows;
+using System.Windows.Input;
 using System.Xml;
 
 
@@ -17,7 +18,6 @@ namespace Todo
             todoListBox.ItemsSource = todoList;
             countTodo.Text = "Antal uppgifter: " + count;
         }
-
         private void addButton_Click_1(object sender, RoutedEventArgs e)
         {
 
@@ -37,7 +37,6 @@ namespace Todo
             countTodo.Text = "Antal uppgifter: " + count;
             todoListBox.Items.Refresh();
         }
-
         private void removeButton_Click(object sender, RoutedEventArgs e)
         {
             if (todoListBox.SelectedItem == null) 
@@ -70,7 +69,21 @@ namespace Todo
                 }
             }
         }
+        private void todoListBox_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            if (todoListBox.SelectedIndex >= 0)
+            {
+                string currentText = todoListBox.SelectedItem.ToString();
+                EditWindow editWindow = new EditWindow(currentText);
 
+                if (editWindow.ShowDialog() == true)
+                {
+                    // Uppdatera listan med nya texten
+                    todoList[todoListBox.SelectedIndex] = editWindow.UpdatedText;
+                    todoListBox.Items.Refresh();
+                }
+            }
+        }
         private void inputTextBox_TextChanged(object sender, System.Windows.Controls.TextChangedEventArgs e)
         {
 
